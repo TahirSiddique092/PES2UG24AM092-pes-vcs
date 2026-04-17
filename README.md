@@ -1,5 +1,5 @@
 # PES-VCS Lab Report: Building a Version Control System
-**Student:** Tahir Siddique | **SRN:** PES2UG24AM092
+**Student:** Mohammed Tahir Siddique | **SRN:** PES2UG24AM092
 
 ---
 
