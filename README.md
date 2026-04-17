@@ -16,9 +16,9 @@ In this phase, I implemented the core storage logic in `object.c`. This involved
 * **Integrity Verification**: Recomputed hashes during read operations to ensure data hasn't been corrupted.
 * **Sharding**: Objects are stored in subdirectories based on the first two characters of their hash to prevent directory overcrowding.
 
-**Screenshot 1.1: Test Objects Output** `![Tests Passing](./screenshots/1.1)`
+**Screenshot 1.1: Test Objects Output** ![Tests Passing](./screenshots/1.1)
 
-**Screenshot 1.2: Sharded Object Store** `![Sharded Store](./screenshots/1.2)`
+**Screenshot 1.2: Sharded Object Store** ![Sharded Store](./screenshots/1.2)
 
 ---
 
@@ -31,9 +31,9 @@ Phase 2 focused on representing directory structures. I implemented `tree_from_i
 
 
 
-**Screenshot 2.1: Test Tree Output** `![Tree Tests](./screenshots/2.1)`
+**Screenshot 2.1: Test Tree Output** ![Tree Tests](./screenshots/2.1)
 
-**Screenshot 2.2: Raw Tree Object Inspection** `![Raw Tree](./screenshots/2.2)`
+**Screenshot 2.2: Raw Tree Object Inspection** ![Raw Tree](./screenshots/2.2)
 
 ---
 
@@ -44,9 +44,9 @@ I implemented the staging area in `index.c`, which serves as the "middle ground"
 * **Atomic Save**: The index is written to a temporary file and renamed only after a successful `fsync` to ensure durability.
 * **Metadata Tracking**: The index stores file modes, SHA-256 hashes, modification times, and sizes for change detection.
 
-**Screenshot 3.1: Init, Add, and Status Sequence** `![Workflow](./screenshots/3.1)`
+**Screenshot 3.1: Init, Add, and Status Sequence** ![Workflow](./screenshots/3.1)
 
-**Screenshot 3.2: Human-Readable Index** `![Index File](./screenshots/3.2)`
+**Screenshot 3.2: Human-Readable Index** ![Index File](./screenshots/3.2)
 
 ---
 
@@ -57,11 +57,11 @@ The final implementation phase involved `commit.c`. I implemented `commit_create
 * **Commit Chain**: Each commit points to its predecessor, creating a verifiable link of project history.
 * **Author Metadata**: Integrated the `PES_AUTHOR` environment variable to record who made the changes.
 
-**Screenshot 4.1: Commit Log** `![PES Log](./screenshots/4.1)`
+**Screenshot 4.1: Commit Log** ![PES Log](./screenshots/4.1)
 
-**Screenshot 4.2: Object Store Growth** `![Object Growth](./screenshots/4.2)`
+**Screenshot 4.2: Object Store Growth** ![Object Growth](./screenshots/4.2)
 
-**Screenshot 4.3: Reference Chain** `![Ref Chain](./screenshots/4.3)`
+**Screenshot 4.3: Reference Chain** ![Ref Chain](./screenshots/4.3)
 
 ---
 
@@ -101,7 +101,7 @@ A race condition occurs if GC deletes an object that an in-progress commit is cu
 The entire suite was verified using the integration test script.
 
 **Final Screenshot: Integration Success** 
-`![Final Integration](./screenshots/Final-1.png)`
-`![Final Integration](./screenshots/Final-2.png)`
+![Final Integration](./screenshots/Final-1.png)
+![Final Integration](./screenshots/Final-2.png)
 
 ---
