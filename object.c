@@ -17,6 +17,8 @@
 #include <unistd.h>
 #include <openssl/evp.h>
 
+
+int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out);
 // ─── PROVIDED ────────────────────────────────────────────────────────────────
 
 void hash_to_hex(const ObjectID *id, char *hex_out) {
